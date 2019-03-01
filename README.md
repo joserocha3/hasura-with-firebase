@@ -40,6 +40,16 @@ Please note this is missing the client side application. The client side applica
 6. Connect Heroku app to GitHub.
    1. Deploy->Deployment method->GitHub->Connect to GitHub->enter repo name->Search->Connect->Manual deploy->Deploy Branch
 
+### Remote Schemas
+
+1. In the Hasura console go to Remote Schemas.
+2. Click Add.
+3. Enter a name.
+4. Change URL to "From env var.
+5. Enter REMOTE_SCHEMA_SERVER_URL. 
+6. Check "forward all headers from client".
+7. Click "Add Remote Schema".
+
 ## TODO
 
 - Implement a front end app

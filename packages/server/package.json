@@ -12,7 +12,8 @@
     "dev:debug": "backpack -r dotenv/config --inspect",
     "dev:debug-wait": "backpack -r dotenv/config --inspect-brk",
     "start": "node ./build/main.js",
-    "build": "backpack build"
+    "build": "backpack build",
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
     "apollo-server": "^2.4.6",
