@@ -1,6 +1,6 @@
 # hasura-with-firebase
 
-Please note this is missing the client side application. The client side application would typically require a use to be logged in. Once logged in each request to your custom GraphQL sever (for remote schema) would contain an `Authorization` header, which is forwarded to Hasura. See TODO section at the end of README.
+Please note this is missing the client side application. The client side application would typically require a user to be logged in. Once logged in each request to your custom GraphQL sever (for remote schema) would contain an `Authorization` header, which is forwarded to Hasura. See TODO section at the end of README.
 
 ## Setup
 
