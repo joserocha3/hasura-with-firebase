@@ -1,0 +1,1 @@
+# hasura-firebase-remote-schema
