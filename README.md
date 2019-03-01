@@ -30,7 +30,8 @@ Please note this is missing the client side application. The client side applica
    1. APP_BASE needs to be set to what is in `/server/example.env/`. Used by the monorepo buildpack.
    2. HASURA_GRAPHQL_ENDPOINT is found in the Hasura server console created from the one click deploy.
    3. YOUR_HASURA_GRAPHQL_ADMIN_SECRET needs to match the one you set of the Hasura server.
-   5. FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY and FIREBASE_PROJECT_ID are found in the file you downloaded from Firebase.
+   4. FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY and FIREBASE_PROJECT_ID are found in the file you downloaded from Firebase.
+   5. APOLLO_INTROSPECTION and APOLLO_PLAYGROUND should be set to `true`.
 3. Add a monorepo build pack.
    1. Settings->Buildpacks->Add buildpack->enter `https://github.com/lstoll/heroku-buildpack-monorepo`->Save changes.
 4. Add nodejs build pack.

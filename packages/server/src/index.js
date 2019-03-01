@@ -6,6 +6,8 @@ import graphql from './utils/graphql'
 import * as auth from './utils/auth'
 
 const server = new ApolloServer({
+  introspection: process.env.APOLLO_INTROSPECTION || false,
+  playground: process.env.APOLLO_PLAYGROUND || false,
   typeDefs,
   resolvers,
   context: async ({ req }) => ({
