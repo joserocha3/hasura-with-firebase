@@ -1,0 +1,26 @@
+version: '3.6'
+services:
+  dockerhost:
+      image: qoomon/docker-host
+      cap_add: [ 'NET_ADMIN', 'NET_RAW' ]
+      restart: on-failure
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+    - db_data:/var/lib/postgresql/data
+  graphql-engine:
+    image: hasura/graphql-engine:v1.0.0-alpha38
+    ports:
+    - "8080:8080"
+    depends_on:
+    - "postgres"
+    restart: always
+    environment:
+      REMOTE_SCHEMA_SERVER_URL: ${REMOTE_SCHEMA_SERVER_URL}
+      HASURA_GRAPHQL_ADMIN_SECRET: ${HASURA_GRAPHQL_ADMIN_SECRET}
+      HASURA_GRAPHQL_JWT_SECRET: ${HASURA_GRAPHQL_JWT_SECRET}
+      HASURA_GRAPHQL_DATABASE_URL: ${DATABASE_URL}
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+volumes:
+  db_data:

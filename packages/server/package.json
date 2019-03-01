@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "repository": "https://github.com/joserocha3/hasura-with-firebase",
+  "author": "Pablo Rocha",
+  "license": "MIT",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "backpack -r dotenv/config",
+    "dev:debug": "backpack -r dotenv/config --inspect",
+    "dev:debug-wait": "backpack -r dotenv/config --inspect-brk",
+    "start": "node ./build/main.js",
+    "build": "backpack build"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "apollo-server": "^2.4.6",
+    "backpack-core": "^0.8.3",
+    "firebase-admin": "^7.0.0",
+    "graphql": "^14.1.1",
+    "graphql-request": "^1.8.2",
+    "lodash.get": "^4.4.2",
+    "yup": "^0.26.10"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0"
+  }
+}

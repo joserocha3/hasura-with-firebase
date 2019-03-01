@@ -1,0 +1,11 @@
+{
+  "name": "hasura",
+  "repository": "https://github.com/joserocha3/hasura-with-firebase",
+  "author": "Pablo Rocha",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "sh ./docker-run.sh",
+    "local": "docker-compose up -d"
+  }
+}

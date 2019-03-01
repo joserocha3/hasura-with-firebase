@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "markdown",
+    "json",
+    "react-hooks"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "semi": [
+      "error",
+      "never"
+    ],
+    "global-require": "off",
+    "no-use-before-define": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 180
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          {
+            "name": "styled-components",
+            "message": "Please import from styled-components/macro."
+          }
+        ],
+        "patterns": [
+          "!styled-components/macro"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+**/dist
+**/generated
+**/build
+**/node_modules
+**/.gitignore
+**/package.json
+**/yarn.lock
+**/.babelrc
+**/.eslintignore
+**/.eslintrc
+**/*.env
