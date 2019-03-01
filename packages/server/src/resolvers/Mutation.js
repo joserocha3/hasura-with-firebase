@@ -208,29 +208,9 @@ const updateUser = async (root, args, { graphql, headers, auth }) => {
   return databaseUser.update_user.returning[0]
 }
 
-const createGeofence = async (root, { data }, { db, headers, auth }, info) => {
-  const user = await auth.getUser(headers)
-  const geofences = await db.account({ id: data.account.connect.id }).geofences()
-  const count = geofences ? geofences.length : 0
-  const limit = user.geofenceLimit || 5
-  if (count >= limit) throw new Error('Geofence limit reached')
-  return db.mutation.createGeofence({ data }, info)
-}
-
-const createReward = async (root, { data }, { db, headers, auth }, info) => {
-  const user = await auth.getUser(headers)
-  const rewards = await db.account({ id: data.account.connect.id }).rewards()
-  const count = rewards ? rewards.length : 0
-  const limit = user.rewardLimit || 5
-  if (count >= limit) throw new Error('Reward limit reached')
-  return db.mutation.createReward({ data }, info)
-}
-
 const Mutation = {
   createUser,
   updateUser,
-  createGeofence,
-  createReward,
 }
 
 export default Mutation

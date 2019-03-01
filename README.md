@@ -1,6 +1,6 @@
 # hasura-with-firebase
 
-See https://hasura-firebase-example.herokuapp.com/console for a running example.
+Please not this is missing the client side application. The client side application would typically require a use to be logged in. Once logged in each request to your custom GraphQL sever (for remote schema) would contain an `Authorization` header, which is forwarded to Hasura. See TODO section at the end of README.
 
 ## Setup
 
@@ -27,17 +27,18 @@ See https://hasura-firebase-example.herokuapp.com/console for a running example.
 
 1. Create another project in Heroku dashboard. This will be the graphql server for your remote schema.
 2. Create `/server/.env/` - these will also need to be created in the Heroku dashboard Settings->Config Vars section.
-   1. APP_BASE needs to be set to what is in `/server/example.env/`
+   1. APP_BASE needs to be set to what is in `/server/example.env/`. Used by the monorepo buildpack.
    2. HASURA_GRAPHQL_ENDPOINT is found in the Hasura server console created from the one click deploy.
    3. YOUR_HASURA_GRAPHQL_ADMIN_SECRET needs to match the one you set of the Hasura server.
    5. FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY and FIREBASE_PROJECT_ID are found in the file you downloaded from Firebase.
 3. Add a monorepo build pack.
    1. Settings->Buildpacks->Add buildpack->enter `https://github.com/lstoll/heroku-buildpack-monorepo`->Save changes.
-4. Add node build pack.
+4. Add nodejs build pack.
    1. Settings->Buildpacks->Add buildpack->click nodejs->Save changes.
+   2. Make sure the nodejs build pack is after the monorepo buildpack.
 5. Commit your new repo to GitHub.
-
->Make sure the monorepo build pack is before the nodejs buildpack.
+6. Connect Heroku app to GitHub.
+   1. Deploy->Deployment method->GitHub->Connect to GitHub->enter repo name->Search->Connect->Manual deploy->Deploy Branch
 
 ## TODO
 

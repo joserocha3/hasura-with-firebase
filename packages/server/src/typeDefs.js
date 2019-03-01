@@ -30,10 +30,6 @@ const typeDefs = gql`
       password: String
       role: String
     ): User!
-
-    createGeofence: User!
-
-    createReward: User!
   }
 `
 
