@@ -16,7 +16,7 @@ Please note this is missing the client side application. The client side applica
 
 ### Hasura Server (one click deploy)
 
-1. [Deploy](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html) a Hasura server to Heroku.   
+1. [Deploy](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html) Hasura GraphQL Engine to Heroku.   
 2. Create `/hasura/.env/` - these will also need to be created in the Heroku dashboard Settings->Config Vars section.
    1. HASURA_GRAPHQL_JWT_SECRET needs to be set to what is in `/hasura/example.env/`.
    2. REMOTE_SCHEMA_SERVER_URL will be the Heroku app address of your GraphQL Server (for remote schema), created in next steps.
